@@ -1,0 +1,56 @@
+Purpose of Thresholds
+
+1. Binary Decision Making :
+   - A threshold allows for a binary decision based on whether a feature's value is below or above a certain point. For example:
+     - If the threshold for Feature 1 is 2, the decision would split the data into two groups:
+       - Group 1: Values ≤ 2 (1, 2)
+       - Group 2: Values > 2 (3, 4)
+
+2. Segmentation of Data:
+   - By applying different thresholds, the algorithm can segment the dataset into subsets that can be analyzed separately. This segmentation helps in identifying patterns or classes more effectively.
+
+3. Maximizing Information Gain:
+   - The goal of the decision tree algorithm is to find the threshold that maximizes the information gain (or minimizes impurity) when splitting the data.
+   - Each threshold is evaluated based on how well it separates the target classes (e.g., for a binary classification task, separating class 0 from class 1).
+
+ Example with Unique Thresholds
+
+Example:
+
+| Feature 1 | Feature 2 | Target |
+|-----------|-----------|--------|
+| 1         | 0         | 0      |
+| 2         | 0         | 0      |
+| 3         | 1         | 1      |
+| 4         | 1         | 1      |
+
+ Unique Thresholds for Feature 1
+
+- Unique values in Feature 1: [1, 2, 3, 4]
+- The algorithm will evaluate each of these unique values as potential thresholds for splitting the dataset.
+
+ Evaluating Thresholds
+
+1. Threshold = 1:
+   - Split: 
+     - Group 1: Values ≤ 1 → (1, Target 0)
+     - Group 2: Values > 1 → (2, 3, 4, Targets 0, 1, 1)
+   - Calculate information gain based on how well this split separates the classes.
+
+2. Threshold = 2:
+   - Split:
+     - Group 1: Values ≤ 2 → (1, 2, Targets 0, 0)
+     - Group 2: Values > 2 → (3, 4, Targets 1, 1)
+   - Calculate information gain for this split.
+
+3. Threshold = 3:
+   - Split:
+     - Group 1: Values ≤ 3 → (1, 2, 3, Targets 0, 0, 1)
+     - Group 2: Values > 3 → (4, Target 1)
+   - Calculate information gain.
+
+4. Threshold = 4:
+   - Split:
+     - Group 1: Values ≤ 4 → (1, 2, 3, 4, Targets 0, 0, 1, 1)
+     - Group 2: No samples (since all values are ≤ 4).
+   - Calculate information gain.
