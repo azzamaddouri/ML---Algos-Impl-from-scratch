@@ -1,4 +1,8 @@
 # y = weights X + bias
+# dependent = slope * independent + intercept
+# The best fit line using Gradient Descent
+# Minimize cost function (Mean Square Error 3) using partial derivatives
+# learning rate is how fast or slow to go in direction that gradient descent tells us to go
 
 import numpy as np
 
